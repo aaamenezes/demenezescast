@@ -59,14 +59,14 @@ function Timeline({ playlists }) {
   return (
     <StyledTimeline>
       {Object.keys(playlists).map(item => {
-        const videos = playlists[item]
+        const { rounded, videos } = playlists[item]
         return (
           <section>
             <h2>{item}</h2>
             <div>
               {videos.map(video => (
-                <a href={video.url}>
-                  <img src={video.thumb} alt="" />
+                <a href={video.url} key={video.url}>
+                  <img src={video.thumb} alt="" className={rounded && 'rounded'} />
                   <span>
                     {video.title}
                   </span>
