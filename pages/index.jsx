@@ -3,14 +3,22 @@ import styled from 'styled-components'
 import { CSSReset } from '../src/components/CSSReset'
 import Menu from '../src/components/Menu'
 import { StyledTimeline } from '../src/components/StyledTimeline'
+import Banner from '../src/components/Banner'
 
 export default function HomePage() {
   return (
     <>
       <CSSReset />
-      <Menu />
-      <Header />
-      <Timeline playlists={config.playlists} />
+      <div style={{
+        display: "flex",
+        flexDirection: "column",
+        flex: 1
+      }}>
+        <Menu />
+        <Banner />
+        <Header />
+        <Timeline playlists={config.playlists} />
+      </div>
     </>
   )
 }
