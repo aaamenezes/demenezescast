@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import imageBanner from '../assets/banner.jpg'
+import config from '../../config.json'
 
 const StyledBanner = styled.section`
   max-height: 45vh;
@@ -15,7 +15,7 @@ const StyledBanner = styled.section`
 export default function Banner() {
   return (
     <StyledBanner>
-      <img src={imageBanner.src} alt='Banner image' />
+      <img src={config.bannerImage} alt='Banner image' />
     </StyledBanner>
   )
 }
