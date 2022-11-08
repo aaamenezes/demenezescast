@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const StyledTimeline = styled.div`
   flex: 1;
@@ -45,9 +45,9 @@ export const StyledTimeline = styled.div`
           padding-top: 8px;
           display: block;
           padding-right: 24px;
-          color: ${({ theme }) => theme.textColorBase || "#222222"};
+          color: ${ ({ theme }) => theme.textColorBase || '#222222' };
         }
       }
     }
   }
-`;
+`

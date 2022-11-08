@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import config from '../../config.json'
 
@@ -15,7 +16,7 @@ const StyledBanner = styled.section`
 export default function Banner() {
   return (
     <StyledBanner>
-      <img src={config.bannerImage} alt='Banner image' />
+      <img src={config.bannerImage} alt='Banner of channel' />
     </StyledBanner>
   )
 }

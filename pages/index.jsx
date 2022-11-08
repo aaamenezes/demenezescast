@@ -1,5 +1,6 @@
-import config from '../config.json'
+import React from 'react'
 import styled from 'styled-components'
+import config from '../config.json'
 import { CSSReset } from '../src/components/CSSReset'
 import Menu from '../src/components/Menu'
 import { StyledTimeline } from '../src/components/StyledTimeline'
@@ -10,10 +11,11 @@ export default function HomePage() {
     <>
       <CSSReset />
       <div style={{
-        display: "flex",
-        flexDirection: "column",
+        display: 'flex',
+        flexDirection: 'column',
         flex: 1
-      }}>
+      }}
+      >
         <Menu />
         <Banner />
         <Header />
@@ -44,7 +46,10 @@ function Header() {
     <StyledHeader>
       {/* <img src='banner' /> */}
       <section className='user-info'>
-        <img src={`https://github.com/${config.github}.png`} />
+        <img
+          src={`https://github.com/${ config.github }.png`}
+          alt='Profile of channel'
+        />
         <div>
           <h2>{config.name}</h2>
           <p>{config.job}</p>
@@ -55,7 +60,6 @@ function Header() {
 }
 
 function Timeline({ playlists }) {
-
   return (
     <StyledTimeline>
       {Object.keys(playlists).map(item => {
@@ -66,7 +70,11 @@ function Timeline({ playlists }) {
             <div>
               {videos.map(video => (
                 <a href={video.url} key={video.url}>
-                  <img src={video.thumb} alt="" className={rounded && 'rounded'} />
+                  <img
+                    src={video.thumb}
+                    alt=''
+                    className={rounded && 'rounded'}
+                  />
                   <span>
                     {video.title}
                   </span>

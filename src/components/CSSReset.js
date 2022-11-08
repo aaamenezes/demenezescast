@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export const CSSReset = createGlobalStyle`
   /* Reset */
@@ -35,4 +35,4 @@ export const CSSReset = createGlobalStyle`
       opacity: .5;
     }
   }
-`;
+`
