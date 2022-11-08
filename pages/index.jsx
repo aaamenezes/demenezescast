@@ -8,7 +8,7 @@ import Banner from '../src/components/Banner'
 
 export default function HomePage() {
   const [ searchValue, setSearchValue ] = useState('')
-  const [ modeType, setModeType ] = useState('light') // 'light' | 'dark'
+  // const [ modeType, setModeType ] = useState('light') // 'light' | 'dark'
 
   return (
     <>
