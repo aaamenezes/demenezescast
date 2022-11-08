@@ -1,6 +1,7 @@
+import React from 'react'
 import styled from 'styled-components'
 
-export const StyledTimeline = styled.div`
+const StyledTimeline = styled.div`
   flex: 1;
   width: 100%;
   padding: 16px;
@@ -51,3 +52,36 @@ export const StyledTimeline = styled.div`
     }
   }
 `
+
+export default function Timeline({ playlists, searchValue }) {
+  return (
+    <StyledTimeline>
+      {Object.keys(playlists).map(item => {
+        const { rounded, videos } = playlists[item]
+        return (
+          <section key={videos[0].title}>
+            <h2>{item}</h2>
+            <div>
+              {videos
+                .filter(video => (
+                  video.title.toLowerCase().includes(searchValue.toLowerCase())
+                ))
+                .map(video => (
+                  <a href={video.url} key={video.url}>
+                    <img
+                      src={video.thumb}
+                      alt=''
+                      className={rounded ? 'rounded' : ''}
+                    />
+                    <span>
+                      {video.title}
+                    </span>
+                  </a>
+                ))}
+            </div>
+          </section>
+        )
+      })}
+    </StyledTimeline>
+  )
+}
