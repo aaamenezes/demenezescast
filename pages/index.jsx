@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import config from '../config.json'
 import { CSSReset } from '../src/components/CSSReset'
@@ -7,6 +7,8 @@ import { StyledTimeline } from '../src/components/StyledTimeline'
 import Banner from '../src/components/Banner'
 
 export default function HomePage() {
+  const [ searchValue, setSearchValue ] = useState('Teste')
+
   return (
     <>
       <CSSReset />
@@ -16,10 +18,10 @@ export default function HomePage() {
         flex: 1
       }}
       >
-        <Menu />
+        <Menu searchValue={searchValue} setSearchValue={setSearchValue} />
         <Banner />
         <Header />
-        <Timeline playlists={config.playlists} />
+        <Timeline playlists={config.playlists} searchValue={searchValue} />
       </div>
     </>
   )
@@ -59,27 +61,31 @@ function Header() {
   )
 }
 
-function Timeline({ playlists }) {
+function Timeline({ playlists, searchValue }) {
   return (
     <StyledTimeline>
       {Object.keys(playlists).map(item => {
         const { rounded, videos } = playlists[item]
         return (
-          <section>
+          <section key={videos[0].title}>
             <h2>{item}</h2>
             <div>
-              {videos.map(video => (
-                <a href={video.url} key={video.url}>
-                  <img
-                    src={video.thumb}
-                    alt=''
-                    className={rounded && 'rounded'}
-                  />
-                  <span>
-                    {video.title}
-                  </span>
-                </a>
-              ))}
+              {videos
+                .filter(video => (
+                  video.title.toLowerCase().includes(searchValue.toLowerCase())
+                ))
+                .map(video => (
+                  <a href={video.url} key={video.url}>
+                    <img
+                      src={video.thumb}
+                      alt=''
+                      className={rounded ? 'rounded' : ''}
+                    />
+                    <span>
+                      {video.title}
+                    </span>
+                  </a>
+                ))}
             </div>
           </section>
         )
