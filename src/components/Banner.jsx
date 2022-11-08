@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import config from '../../config.json'
 
 const StyledBanner = styled.section`
-  max-height: 45vh;
+  max-height: 230px;
   overflow: hidden;
 
   img {
