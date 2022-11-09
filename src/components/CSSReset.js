@@ -2,6 +2,23 @@ import { createGlobalStyle } from 'styled-components'
 
 export const CSSReset = createGlobalStyle`
   /* Reset */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: ${ ({ mode, theme }) => theme.color[mode].color };
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${ ({ mode, theme }) => (
+    theme.color[mode === 'light' ? 'dark' : 'light'].border
+  ) };
+    border-radius: 4px;
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -13,6 +30,7 @@ export const CSSReset = createGlobalStyle`
     background-color: ${ ({ mode, theme }) => (
     theme.color[mode].backgroundColor
   ) };
+  }
   /* NextJS */
   html {
     display: flex;

@@ -4,7 +4,9 @@ import styled from 'styled-components'
 const StyledTimeline = styled.div`
   flex: 1;
   width: 100%;
+  max-width: 1199px;
   padding: 16px;
+  margin: 0 auto;
   overflow: hidden;
   h2 {
     font-size: 16px;
@@ -68,7 +70,7 @@ export default function Timeline({ playlists, searchValue }) {
         return (
           <section key={videos[0].title} style={{ marginBottom: '3rem' }}>
             <h2>{item}</h2>
-            <div>
+            <div style={{ paddingBottom: '2rem' }}>
               {filteredVideos.map(video => (
                 <a href={video.url} key={video.url}>
                   <img
