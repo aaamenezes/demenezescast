@@ -5,17 +5,19 @@ import Mode from '../Mode'
 import Search from './components/Search'
 
 const StyledMenu = styled.header`
-  display: flex;
-  flex-direction: row;
-  height: 56px;
-  justify-content: space-between;
-  background-color: ${ ({ theme, mode }) => theme.color[mode].backgroundColor };
-  border: 1px solid ${ ({ theme, mode }) => theme.color[mode].border };
-  align-items: center;
-  padding: 0 16px;
-  gap: 16px;
   position: fixed;
+  z-index: 1;
+  display: flex;
+  gap: 16px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  border: 1px solid ${ ({ theme, mode }) => theme.color[mode].border };
+  background-color: ${ ({ theme, mode }) => theme.color[mode].backgroundColor };
+
   .logo {
     width: 100%;  
     max-width: 80px;
@@ -23,7 +25,7 @@ const StyledMenu = styled.header`
       max-width: 127px;
     }
     .text {
-      fill: ${ ({ theme }) => theme.textColorBase || '#222222' };
+      fill: ${ ({ theme, mode }) => theme.color[mode].color };
     }
   }
 `

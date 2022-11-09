@@ -66,7 +66,7 @@ export default function Timeline({ playlists, searchValue }) {
         if (filteredVideos.length === 0) return null
 
         return (
-          <section key={videos[0].title}>
+          <section key={videos[0].title} style={{ marginBottom: '3rem' }}>
             <h2>{item}</h2>
             <div>
               {filteredVideos.map(video => (

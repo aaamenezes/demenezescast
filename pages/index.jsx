@@ -35,7 +35,8 @@ export default function HomePage() {
       <div style={{
         display: 'flex',
         flexDirection: 'column',
-        flex: 1
+        flex: 1,
+        width: '100%'
       }}
       >
         <Menu
