@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react'
 import styled from 'styled-components'
+import Mode from '../Mode'
 import Search from './components/Search'
 
 const StyledMenu = styled.header`
@@ -27,12 +28,13 @@ const StyledMenu = styled.header`
   }
 `
 
-export default function Menu({ searchValue, setSearchValue, mode }) {
+export default function Menu({ searchValue, setSearchValue, mode, setMode }) {
   return (
     <StyledMenu mode={mode}>
-      <div>
+      <div style={{ flex: 1 }}>
         <Logo />
       </div>
+      <Mode mode={mode} setMode={setMode} />
       <Search
         searchValue={searchValue}
         setSearchValue={setSearchValue}
