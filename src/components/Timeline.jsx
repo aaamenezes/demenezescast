@@ -8,11 +8,13 @@ const StyledTimeline = styled.div`
   padding: 16px;
   margin: 0 auto;
   overflow: hidden;
-  h2 {
+
+    h2 {
     font-size: 16px;
     margin-bottom: 16px;
     text-transform: capitalize;
   }
+
   img {
     aspect-ratio: 16/9;
     font-weight: 500;
@@ -27,14 +29,14 @@ const StyledTimeline = styled.div`
       border-radius: 50%;
     }
   }
+
   section {
     width: 100%;
     padding: 0;
     overflow: hidden;
     padding: 16px;
-    div {
-      
-      width: calc(100vw - 16px * 4);
+
+    div {      
       display: grid;
       grid-gap: 16px;
       grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
@@ -42,6 +44,24 @@ const StyledTimeline = styled.div`
       grid-auto-columns: minmax(200px,1fr);
       overflow-x: auto;
       scroll-snap-type: x mandatory;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: ${ ({ mode, theme }) => theme.color[mode].gray };
+        border-radius: 4px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: ${ ({ mode, theme }) => (
+    theme.color[mode === 'light' ? 'dark' : 'light'].border
+  ) };
+        border-radius: 4px;
+      }
+
       a {
         scroll-snap-align: start;
         color: currentColor;
@@ -56,9 +76,9 @@ const StyledTimeline = styled.div`
   }
 `
 
-export default function Timeline({ playlists, searchValue }) {
+export default function Timeline({ playlists, searchValue, mode }) {
   return (
-    <StyledTimeline>
+    <StyledTimeline mode={mode}>
       {Object.keys(playlists).map(item => {
         const { rounded, videos } = playlists[item]
         const filteredVideos = videos.filter(video => (

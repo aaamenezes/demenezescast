@@ -1,6 +1,10 @@
 {
-  "name": "André Menezes (deMenezes)",
+  "name": "André Menezes",
   "job": "Front-end Developer",
+  "website": {
+    "title": "deMenezes.dev",
+    "url": "https://demenezes.dev/"
+  },
   "github": "aaamenezes",
   "bannerImage": "images/banner.jpg",
   "icons": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css",

@@ -46,8 +46,12 @@ export default function HomePage() {
           mode={mode}
         />
         <Banner />
-        <Header />
-        <Timeline playlists={config.playlists} searchValue={searchValue} />
+        <Header mode={mode} />
+        <Timeline
+          playlists={config.playlists}
+          searchValue={searchValue}
+          mode={mode}
+        />
       </div>
     </ThemeProvider>
   )
