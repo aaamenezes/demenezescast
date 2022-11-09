@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const StyledSearch = styled.div`
   display: flex;
   flex-direction: row;
-  border: 1px solid ${ ({ theme }) => theme.borderBase };
+  border: 1px solid ${ ({ theme, mode }) => theme.color[mode].border };
   max-width: 425px;
   width: 100%;
   border-radius: 2px;
@@ -15,8 +15,10 @@ const StyledSearch = styled.div`
     padding: 4px 6px;
     border: none;
     outline: none;
-    color: ${ ({ theme }) => theme.textColorBase };
-    background-color: ${ ({ theme }) => theme.backgroundBase };
+    color: ${ ({ theme, mode }) => theme.color[mode].color };
+    background-color: ${ ({ theme, mode }) => (
+    theme.color[mode].backgroundColor
+  ) };
   }
   button {
     flex: 1;
@@ -39,9 +41,9 @@ const StyledSearch = styled.div`
 // Search
 // Informação sempre desce
 
-export default function Search({ searchValue, setSearchValue }) {
+export default function Search({ searchValue, setSearchValue, mode }) {
   return (
-    <StyledSearch>
+    <StyledSearch mode={mode}>
       <input
         type='text'
         onChange={event => setSearchValue(event.target.value)}

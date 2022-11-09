@@ -8,8 +8,8 @@ const StyledMenu = styled.header`
   flex-direction: row;
   height: 56px;
   justify-content: space-between;
-  background-color: ${ ({ theme }) => theme.backgroundLevel1 || '#FFFFFF' };
-  border: 1px solid ${ ({ theme }) => theme.borderBase || '#e5e5e5' };
+  background-color: ${ ({ theme, mode }) => theme.color[mode].backgroundColor };
+  border: 1px solid ${ ({ theme, mode }) => theme.color[mode].border };
   align-items: center;
   padding: 0 16px;
   gap: 16px;
@@ -27,13 +27,17 @@ const StyledMenu = styled.header`
   }
 `
 
-export default function Menu({ searchValue, setSearchValue }) {
+export default function Menu({ searchValue, setSearchValue, mode }) {
   return (
-    <StyledMenu>
+    <StyledMenu mode={mode}>
       <div>
         <Logo />
       </div>
-      <Search searchValue={searchValue} setSearchValue={setSearchValue} />
+      <Search
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+        mode={mode}
+      />
     </StyledMenu>
   )
 }

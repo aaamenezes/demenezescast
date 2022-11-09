@@ -42,11 +42,12 @@ const StyledTimeline = styled.div`
       scroll-snap-type: x mandatory;
       a {
         scroll-snap-align: start;
+        color: currentColor;
+
         span {
           padding-top: 8px;
           display: block;
           padding-right: 24px;
-          color: ${ ({ theme }) => theme.textColorBase || '#222222' };
         }
       }
     }

@@ -9,7 +9,10 @@ export const CSSReset = createGlobalStyle`
   }
   body {
     font-family: sans-serif;
-  }
+    color: ${ ({ mode, theme }) => theme.color[mode].color };
+    background-color: ${ ({ mode, theme }) => (
+    theme.color[mode].backgroundColor
+  ) };
   /* NextJS */
   html {
     display: flex;
