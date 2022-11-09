@@ -59,26 +59,28 @@ export default function Timeline({ playlists, searchValue }) {
     <StyledTimeline>
       {Object.keys(playlists).map(item => {
         const { rounded, videos } = playlists[item]
+        const filteredVideos = videos.filter(video => (
+          video.title.toLowerCase().includes(searchValue.toLowerCase())
+        ))
+
+        if (filteredVideos.length === 0) return null
+
         return (
           <section key={videos[0].title}>
             <h2>{item}</h2>
             <div>
-              {videos
-                .filter(video => (
-                  video.title.toLowerCase().includes(searchValue.toLowerCase())
-                ))
-                .map(video => (
-                  <a href={video.url} key={video.url}>
-                    <img
-                      src={video.thumb}
-                      alt=''
-                      className={rounded ? 'rounded' : ''}
-                    />
-                    <span>
-                      {video.title}
-                    </span>
-                  </a>
-                ))}
+              {filteredVideos.map(video => (
+                <a href={video.url} key={video.url}>
+                  <img
+                    src={video.thumb}
+                    alt=''
+                    className={rounded ? 'rounded' : ''}
+                  />
+                  <span>
+                    {video.title}
+                  </span>
+                </a>
+              ))}
             </div>
           </section>
         )
