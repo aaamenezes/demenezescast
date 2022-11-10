@@ -9,155 +9,113 @@
   "bannerImage": "images/banner.jpg",
   "icons": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css",
   "playlists": {
-    "jogos": {
-      "rounded": false,
-      "videos": [
-        {
-          "title": "Frostpunk - Neve e Steak tartare",
-          "url": "https://www.youtube.com/watch?v=QsqatJxAUtk",
-          "thumb": "https://img.youtube.com/vi/QsqatJxAUtk/hqdefault.jpg"
-        },
-        {
-          "title": "Frostpunk - Neve e Steak tartare",
-          "url": "https://www.youtube.com/watch?v=O8jtAyPuhNg",
-          "thumb": "https://img.youtube.com/vi/O8jtAyPuhNg/hqdefault.jpg"
-        },
-        {
-          "title": "Gas Station Simulator - 8 dias sem dormir!",
-          "url": "https://www.youtube.com/watch?v=R1d0DyRDG_Q",
-          "thumb": "https://img.youtube.com/vi/R1d0DyRDG_Q/hqdefault.jpg"
-        },
-        {
-          "title": "Gartic Phone - Não assista a esse NerdPlayer!",
-          "url": "https://www.youtube.com/watch?v=0oJQUs5oRiM",
-          "thumb": "https://img.youtube.com/vi/0oJQUs5oRiM/hqdefault.jpg"
-        },
-        {
-          "title": "Netdecking Estraga o Magic?",
-          "url": "https://www.youtube.com/watch?v=dXihyhYEsEc",
-          "thumb": "https://img.youtube.com/vi/dXihyhYEsEc/hqdefault.jpg"
-        },
-        {
-          "title": "Cities: Skylines - EPCOTAB, o futuro de Saint Laurrent",
-          "url": "https://www.youtube.com/watch?v=zybKHMgLCWU",
-          "thumb": "https://img.youtube.com/vi/zybKHMgLCWU/hqdefault.jpg"
-        },
-        {
-          "title": "We Were Here Together - Os Enigmas deste Mundo",
-          "url": "https://www.youtube.com/watch?v=UKgQsrHUG40",
-          "thumb": "https://img.youtube.com/vi/UKgQsrHUG40/hqdefault.jpg"
-        },
-        {
-          "title": "Microsoft Flight Simulator - Top Gun: Oceania - Missão RJ!",
-          "url": "https://www.youtube.com/watch?v=n3TneUb5c-w",
-          "thumb": "https://img.youtube.com/vi/n3TneUb5c-w/hqdefault.jpg"
-        }
-      ]
-    },
-    "front-end": {
-      "rounded": false,
-      "videos": [
-        {
-          "title": "Jogo com JavaScript #01: Criando um Flappy Bird do ZERO!!!",
-          "url": "https://youtube.com/watch?v=jOAU81jdi-c",
-          "thumb": "https://img.youtube.com/vi/jOAU81jdi-c/hqdefault.jpg"
-        },
-        {
-          "title": "Jogo com JavaScript #01: Criando um Flappy Bird do ZERO!!!",
-          "url": "https://www.youtube.com/watch?v=llF6vD-RljE",
-          "thumb": "https://img.youtube.com/vi/llF6vD-RljE/hqdefault.jpg"
-        },
-        {
-          "title": "A Primeira Aula de Flutter Que Todo Mundo Deveria Ter",
-          "url": "https://www.youtube.com/watch?v=J4BVaXkwmM8",
-          "thumb": "https://img.youtube.com/vi/J4BVaXkwmM8/hqdefault.jpg"
-        },
-        {
-          "title": "O QUE SÃO FRAMEWORKS E BIBLIOTECAS? QUAIS AS DIFERENÇAS?",
-          "url": "https://www.youtube.com/watch?v=dp0zB4n3MUs",
-          "thumb": "https://img.youtube.com/vi/dp0zB4n3MUs/hqdefault.jpg"
-        },
-        {
-          "title": "Angular (O Vídeo que Você Precisava para Começar no Framework) // Dicionário do Programador",
-          "url": "https://www.youtube.com/watch?v=Yf0rC7dERjg",
-          "thumb": "https://img.youtube.com/vi/Yf0rC7dERjg/hqdefault.jpg"
-        },
-        {
-          "title": "Como Foi Programado um App Que Faz Mágica",
-          "url": "https://www.youtube.com/watch?v=I36seuWUe5s",
-          "thumb": "https://img.youtube.com/vi/I36seuWUe5s/hqdefault.jpg"
-        },
-        {
-          "title": "O que todo iniciante em Front End deveria aprender | Como manipular arrays e objetos em JavaScript",
-          "url": "https://www.youtube.com/watch?v=yS7AcF-xRUg",
-          "thumb": "https://img.youtube.com/vi/yS7AcF-xRUg/hqdefault.jpg"
-        },
-        {
-          "title": "5 Erros Históricos do CSS",
-          "url": "https://www.youtube.com/watch?v=HNjkqONzGS0",
-          "thumb": "https://img.youtube.com/vi/HNjkqONzGS0/hqdefault.jpg"
-        },
-        {
-          "title": "Deploy de Front End ATUALIZADO! | O que eu uso para hospedagem de Front End",
-          "url": "https://www.youtube.com/watch?v=d9c0r-J6CdM",
-          "thumb": "https://img.youtube.com/vi/d9c0r-J6CdM/hqdefault.jpg"
-        }
-      ]
-    },
-    "back-end": {
-      "rounded": false,
-      "videos": [
-        {
-          "title": "Node JS: Construindo CRUDs com file system focando em serialização e JSON",
-          "url": "https://www.youtube.com/watch?v=dvd3pNYh7So",
-          "thumb": "https://img.youtube.com/vi/dvd3pNYh7So/hqdefault.jpg"
-        },
-        {
-          "title": "Node JS: Construindo CRUDs com file system focando em serialização e JSON",
-          "url": "https://www.youtube.com/watch?v=8q36rNS5yVo",
-          "thumb": "https://img.youtube.com/vi/8q36rNS5yVo/hqdefault.jpg"
-        },
-        {
-          "title": "O que é o Java? #HipstersPontoTube",
-          "url": "https://www.youtube.com/watch?v=90NcVNsKGik",
-          "thumb": "https://img.youtube.com/vi/90NcVNsKGik/hqdefault.jpg"
-        },
-        {
-          "title": "O que é Machine Learning? #HipstersPontoTube",
-          "url": "https://www.youtube.com/watch?v=Iuz_jc96bQk",
-          "thumb": "https://img.youtube.com/vi/Iuz_jc96bQk/hqdefault.jpg"
-        },
-        {
-          "title": "A MELHOR linguagem de programação com Fabio Akita | #HipstersPontoTube",
-          "url": "https://www.youtube.com/watch?v=imB0QVoNrGc",
-          "thumb": "https://img.youtube.com/vi/imB0QVoNrGc/hqdefault.jpg"
-        },
-        {
-          "title": "Top 5 libs que todo aplicativo Android deve ter com Alex Felipe | #HipstersPontoTube",
-          "url": "https://www.youtube.com/watch?v=ldRbnpy-qQs",
-          "thumb": "https://img.youtube.com/vi/ldRbnpy-qQs/hqdefault.jpg"
-        },
-        {
-          "title": "O que é o C#? #HipstersPontoTube",
-          "url": "https://www.youtube.com/watch?v=0JWMVc1CqpA",
-          "thumb": "https://img.youtube.com/vi/0JWMVc1CqpA/hqdefault.jpg"
-        }
-      ]
-    },
-    "Canais favoritos": {
-      "rounded": true,
-      "videos": [
-        {
-          "title": "Dev Soutinho",
-          "url": "https://www.youtube.com/c/DevSoutinho",
-          "thumb": "https://github.com/omariosouto.png"
-        },
-        {
-          "title": "Willian Justen",
-          "url": "https://www.youtube.com/c/WillianJustenCursos",
-          "thumb": "https://github.com/willianjusten.png"
-        }
-      ]
-    }
+    "Tech": [
+      {
+        "title": "Te Vejo Domingo",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkLnBvZC5zcGFjZS90ZXZlam9kb21pbmdv?sa=X&ved=0CAMQ9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT29RR4csBrDmXd-7TodV6afdWkDCme4PzJc5f1lUWgU-D54zY"
+      },
+      {
+        "title": "Cabeça de Lab",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy9hNGZlOWY4L3BvZGNhc3QvcnNz?sa=X&ved=0CAsQ9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFOL7_fkGT66IW7JFVh9CfA9pL5n7_oMzncO_c5PXRTxxUhHsb"
+      },
+      {
+        "title": "Diocast",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy80YzE3N2NkNC9wb2RjYXN0L3Jzcw?sa=X&ved=0CAwQ9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdUgWZSAF1yAXFc2_36GD2hP-fiHoBYnUOD55BvSoAW9aS5jA"
+      },
+      {
+        "title": "Devs Cansados",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy9jOTQ2YzIwL3BvZGNhc3QvcnNz?sa=X&ved=0CA4Q9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT644FkN6PMqdRNNZi3JI0l5GGy574GqY9OAFT9k-Bm3OjT0RK8"
+      },
+      {
+        "title": "Tecnocast",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly90ZWNub2Jsb2cubmV0L3RlY25vY2FzdC1mZWVkLw?sa=X&ved=0CBcQ9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnvdwG_QMFD6oF-zwyqRxbI0Pp78fN4qApJ7uhISWOio-NL2w"
+      },
+      {
+        "title": "Hipsters Ponto Tech",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly9oaXBzdGVycy50ZWNoL2ZlZWQvcG9kY2FzdC8?sa=X&ved=0CBgQ9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR5nOFmDmY-Me6roeOdtpQrJwamlSBGNO35H5As1WD5LTc-CXE"
+      },
+      {
+        "title": "DEVNAESTRADA",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly9kZXZuYWVzdHJhZGEuY29tLmJyL2ZlZWQueG1s?sa=X&ved=0CBsQ9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQiV2Cg8GvvaFnh2vUnL18UPDZglqeOeI9ydXnurQlSk3QTgNn2"
+      },
+      {
+        "title": "Lambda 3",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly93d3cubGFtYmRhMy5jb20uYnIvZmVlZC9wb2RjYXN0?sa=X&ved=0CB8Q9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRaiTlvsJ1PQ4FpNAOcXYD6xQyY4zJKoOPwQHyuTj9j42VrvlU"
+      },
+      {
+        "title": "Fala Dev",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy8zYmYyZjJjL3BvZGNhc3QvcnNz?sa=X&ved=0CCMQ9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSzk389LChEtricbdf0Sa-64kDv97hjKX79m2A1SdH8FAaF0gw"
+      },
+      {
+        "title": "Love The Problem",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy8xMGExMzIzMC9wb2RjYXN0L3Jzcw?sa=X&ved=0CCsQ9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTorXmnA02sfzttEuxaRQ0Q3NJdQxbHVetJfTfwdDCs0JTPU44"
+      }
+    ],
+    "Entrevistas": [
+      {
+        "title": "Desce a Letra Show",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85ZWUyZTU3MC9wb2RjYXN0L3Jzcw?sa=X&ved=0CAUQ9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSBokuqHD-af8REqF0y63WCZz-yBIW6e-1e6cnYw4O4ZnkSyYo"
+      },
+      {
+        "title": "Podpah",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy81N2JkMzBkOC9wb2RjYXN0L3Jzcw?sa=X&ved=0CAkQ9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRLYlQ-8LJNEDFP_PZTaje0YSzeqPmzG-HQLNcrfgyZSO9TYu9x"
+      },
+      {
+        "title": "Inteligência LTDA",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly93d3cub21ueWNvbnRlbnQuY29tL2QvcGxheWxpc3QvMDAwOWIxNjctMGU4Mi00MTRlLTkxZWItYWFlODAxMWZjNjZkLzMwMWY3NTJjLTA1YTYtNDlmZi05NWYzLWFkMTAwMTFmNTYwNy8xOTc0NGY1Zi03Mzk1LTQ2MjEtOGMzNy1hZDEwMDExZjU2MTUvcG9kY2FzdC5yc3M?sa=X&ved=0CA0Q9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGxxWGCBeu3KIUE6pu5OYLPsjwTR6R_FGiqaCIs37uw-ER9uw"
+      },
+      {
+        "title": "Mais que 8 Minutos",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5zb3VuZGNsb3VkLmNvbS91c2Vycy9zb3VuZGNsb3VkOnVzZXJzOjc4MDk3NDg2My9zb3VuZHMucnNz?sa=X&ved=0CCoQ9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSERFiuYa5hBj-KdzshuNsgI_UveddO-ss61-YcfTLksGm7kuk"
+      },
+      {
+        "title": "Flow",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly9yc3MtZmVlZC1mbG93cG9kY2FzdC0yZXFqM2ZsM2xhLXVlLmEucnVuLmFwcC9mZWVkL3Jzcw?sa=X&ved=0CDAQ9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRCUcocdDXj2XAKN1WFxYRkk0NJug1mu3kyAqbesvraZc3q8QHB"
+      }
+    ],
+    "Notícias": [
+      {
+        "title": "O Assunto",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly93d3cub21ueWNvbnRlbnQuY29tL2QvcGxheWxpc3QvNjUxYTI1MWUtMDZlMS00N2UwLTkzMzYtYWM1YTAwZjQxNjI4LzA0NTYxYjQzLTc1M2QtNDc4NC04ZTE5LWFjOGIwMGU4NjQxMS8zMDM2ZDU1MC04NWIyLTQzMDEtYjFlNC1hYzhiMDBlODY0MWYvcG9kY2FzdC5yc3M?sa=X&ved=0CCAQ9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs-vvi5szf5AHlbi4JQfm7v3dLB0Suv6P36zZKd0tq33eGxvop"
+      },
+      {
+        "title": "Boletim Folha",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly93d3cub21ueWNvbnRlbnQuY29tL2QvcGxheWxpc3QvMmY2YTc5YWEtZDE4MS00OGE0LTkyZTAtYWM1ZDAwYzhlYjFkLzNkNDZiMmJjLTA1MDMtNGQ1Ni04YzhhLWFjNWQwMTY4Y2QxZi9iZDI3YTBhOC0zMGIyLTRjYzgtYjJlOC1hYzVkMDE2OGNkMzIvcG9kY2FzdC5yc3M?sa=X&ved=0CCwQ9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSxBiJvwmVssOrq6lVuYFOBmkQU6FGCXykGpudrrVnYRHhKawQ"
+      }
+    ],
+    "Curiosidades": [
+      {
+        "title": "Naruhoso",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5zaW1wbGVjYXN0LmNvbS9od1FWbTVneQ?sa=X&ved=0CCYQ9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcST4KWnSWY_RfqdgIppwSjYhxSuHMXAbPSrmsTM6_fPKOyrZOY"
+      },
+      {
+        "title": "Nerdcast",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly9qb3ZlbW5lcmQuY29tLmJyL2ZlZWQtbmVyZGNhc3Qv?sa=X&ved=0CDEQ9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRhisKs8s2ptKMDQIkkPCWmhwLRPjn2JpWoIxvusvYR0IOCt5d"
+      },
+      {
+        "title": "Braincast",
+        "url": "https://podcasts.google.com/feed/aHR0cHM6Ly93d3cub21ueWNvbnRlbnQuY29tL2QvcGxheWxpc3QvNjUxYTI1MWUtMDZlMS00N2UwLTkzMzYtYWM1YTAwZjQxNjI4L2ZjMjQzYjY2LWYzNGMtNDY1Ni05MDQyLWFjZDQwMGVkY2NhNS9kNGM4ZTM5OC00NDZjLTQ0N2EtYWQ0MS1hY2Q0MDBlZGNjYzEvcG9kY2FzdC5yc3M?sa=X&ved=0CDIQ9sEGahgKEwjw1Z-QyqL7AhUAAAAAHQAAAAAQvAE",
+        "thumb": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTkjdvygO12Zzu9KjZ8uFMX0rqpaC4UuBs7TnzMefrmz6ADbF8"
+      }
+    ]
   }
 }

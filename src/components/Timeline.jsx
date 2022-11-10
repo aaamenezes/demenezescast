@@ -16,18 +16,12 @@ const StyledTimeline = styled.div`
   }
 
   img {
-    aspect-ratio: 16/9;
+    aspect-ratio: 1/1;
     font-weight: 500;
     object-fit: cover;
     width: 100%;
     max-width: 210px;
     height: auto;
-
-    &.rounded {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-    }
   }
 
   section {
@@ -78,7 +72,7 @@ export default function Timeline({ playlists, searchValue, mode }) {
   return (
     <StyledTimeline mode={mode}>
       {Object.keys(playlists).map(item => {
-        const { rounded, videos } = playlists[item]
+        const videos = playlists[item]
         const filteredVideos = videos.filter(video => (
           video.title.toLowerCase().includes(searchValue.toLowerCase())
         ))
@@ -91,11 +85,7 @@ export default function Timeline({ playlists, searchValue, mode }) {
             <div style={{ paddingBottom: '2rem' }}>
               {filteredVideos.map(video => (
                 <a href={video.url} key={video.url}>
-                  <img
-                    src={video.thumb}
-                    alt=''
-                    className={rounded ? 'rounded' : ''}
-                  />
+                  <img src={video.thumb} alt='' />
                   <span>
                     {video.title}
                   </span>
