@@ -51,14 +51,12 @@ const StyledTimeline = styled.div`
       }
 
       &::-webkit-scrollbar-track {
-        background-color: ${ ({ mode, theme }) => theme.color[mode].gray };
+        background-color: ${ ({ theme }) => theme.gray };
         border-radius: 4px;
       }
 
       &::-webkit-scrollbar-thumb {
-        background-color: ${ ({ mode, theme }) => (
-    theme.color[mode === 'light' ? 'dark' : 'light'].border
-  ) };
+        background-color: ${ ({ theme }) => theme.border };
         border-radius: 4px;
       }
 

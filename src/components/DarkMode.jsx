@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { ColorModeContext } from './ColorMode'
 
 const StyledDarkMode = styled.label`
   display: flex;
   align-items: center;
   padding: 0.5rem;
   height: 40px;
-  border: 1px solid ${ ({ theme, mode }) => theme.color[mode].border };
+  border: 1px solid ${ ({ theme }) => theme.border };
   border-radius: 4px;
   cursor: pointer;
 
@@ -30,22 +31,22 @@ const StyledDarkMode = styled.label`
   }
 `
 
-export default function Mode({ mode, setMode }) {
-  function handleChange(event) {
-    const newMode = event.target.checked ? 'dark' : 'light'
-    setMode(newMode)
-    localStorage.setItem('storageMode', newMode)
-  }
+export default function Mode() {
+  const { mode, handleMode } = useContext(ColorModeContext)
+
+  const iconClassName = 'fa-regular fa-'.concat(
+    mode === 'light' ? 'sun' : 'moon'
+  )
 
   return (
-    <StyledDarkMode mode={mode}>
+    <StyledDarkMode>
       <input
         type='checkbox'
         checked={mode === 'dark'}
-        onChange={handleChange}
+        onChange={handleMode}
         className='input'
       />
-      <i className={`fa-regular fa-${ mode === 'light' ? 'sun' : 'moon' }`} />
+      <i className={iconClassName} />
       <span>{mode.toUpperCase()}</span>
     </StyledDarkMode>
 

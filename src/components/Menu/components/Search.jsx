@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const StyledSearch = styled.div`
   display: flex;
   flex-direction: row;
-  border: 1px solid ${ ({ theme, mode }) => theme.color[mode].border };
+  border: 1px solid ${ ({ theme }) => theme.border };
   max-width: 425px;
   width: 100%;
   border-radius: 4px;
@@ -15,10 +15,8 @@ const StyledSearch = styled.div`
     padding: 4px 6px;
     border: none;
     outline: none;
-    color: ${ ({ theme, mode }) => theme.color[mode].color };
-    background-color: ${ ({ theme, mode }) => (
-    theme.color[mode].backgroundColor
-  ) };
+    color: ${ ({ theme }) => theme.color };
+    background-color: ${ ({ theme }) => theme.backgroundColor };
   }
   button {
     flex: 1;

@@ -21,7 +21,7 @@ const StyledHeader = styled.header`
     }
 
     p {
-      color: ${ ({ theme, mode }) => theme.color[mode].border };
+      color: ${ ({ theme }) => theme.border };
     }
 
     a {

@@ -1,4 +1,4 @@
-const color = {
+export const theme = {
   dark: {
     color: '#FAFAFA',
     gray: '#121212',
@@ -11,8 +11,4 @@ const color = {
     backgroundColor: '#FAFAFA',
     border: '#787878'
   }
-}
-
-export const theme = {
-  color
 }

@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react'
 import styled from 'styled-components'
-import Mode from '../Mode'
+import Mode from '../DarkMode'
 import Search from './components/Search'
 
 const StyledMenu = styled.header`
@@ -15,8 +15,8 @@ const StyledMenu = styled.header`
   width: 100%;
   height: 56px;
   padding: 0 16px;
-  border: 1px solid ${ ({ theme, mode }) => theme.color[mode].border };
-  background-color: ${ ({ theme, mode }) => theme.color[mode].backgroundColor };
+  border: 1px solid ${ ({ theme }) => theme.border };
+  background-color: ${ ({ theme }) => theme.backgroundColor };
 
   .logo {
     width: 100%;  
@@ -25,7 +25,7 @@ const StyledMenu = styled.header`
       max-width: 127px;
     }
     .text {
-      fill: ${ ({ theme, mode }) => theme.color[mode].color };
+      fill: ${ ({ theme }) => theme.color };
     }
   }
 `
