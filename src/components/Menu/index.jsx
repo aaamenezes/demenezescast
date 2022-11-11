@@ -33,15 +33,15 @@ const StyledMenu = styled.header`
 export default function Menu({ searchValue, setSearchValue, mode, setMode }) {
   return (
     <StyledMenu mode={mode}>
-      <div style={{ flex: 1 }}>
+      <div>
         <Logo />
       </div>
-      <Mode mode={mode} setMode={setMode} />
       <Search
         searchValue={searchValue}
         setSearchValue={setSearchValue}
         mode={mode}
       />
+      <Mode mode={mode} setMode={setMode} />
     </StyledMenu>
   )
 }
