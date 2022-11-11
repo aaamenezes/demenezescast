@@ -5,12 +5,12 @@ export const StyledRegisterPodcast = styled.div`
     width: 50px;
     height: 50px;
     font-size: 20px;
-    color: ${ ({ theme }) => theme.backgroundColor };
+    color: ${ ({ theme }) => theme.background };
     position: fixed;
     bottom: 16px;
     right: 16px;
     border: 0;
-    background-color: red;
+    background-color: ${ ({ theme }) => theme.brand_50 };
     border-radius: 50%;
     z-index: 99;
     cursor: pointer;
@@ -27,7 +27,7 @@ export const StyledRegisterPodcast = styled.div`
     cursor: pointer;
   }
   button[type="submit"] {
-    background-color: red;
+    background-color: ${ ({ theme }) => theme.background };
     padding: 8px 16px;
     border: none;
     border-radius: 2px;
@@ -35,24 +35,23 @@ export const StyledRegisterPodcast = styled.div`
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: ${ ({ theme }) => theme.backgroundColor };
+    color: ${ ({ theme }) => theme.brand_50 };
   }
   .form-wrapper {
-    overflow-y: auto;
-    width: 100%;
-    padding: 5%;
-    background-color: rgba(0,0,0,0.5);
     position: fixed;
+    z-index: 100;
     transform: translateX(-50%);
     top: 0;
-    bottom: 0;
     left: 50%;
-    right: 0;
-    z-index: 100;
-    justify-content: center;
+    display: grid;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+    background-color: rgba(0,0,0,0.5);
   }
   .search-form {
-    background-color: ${ ({ theme }) => theme.backgroundColor };
+    background-color: ${ ({ theme }) => theme.brand_50 };
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -62,14 +61,12 @@ export const StyledRegisterPodcast = styled.div`
   }
   input {
     border-radius: 2px;
-    border: 1px solid ${ ({ theme }) => theme.borderBase };
+    border: 1px solid ${ ({ theme }) => theme.neutral_500 };
     padding: 8px 10px;
     margin-bottom: 1rem;
     outline: none;
-    color: #222222;
-    background-color: #f9f9f9;
-    color: ${ ({ theme }) => theme.textColorBase };
-    background-color: ${ ({ theme }) => theme.backgroundBase };
+    color: ${ ({ theme }) => theme.color };
+    background-color: ${ ({ theme }) => theme.background };
   }
 
   .submit-button {
@@ -78,14 +75,15 @@ export const StyledRegisterPodcast = styled.div`
 
   .results-wrapper {
     padding: 1rem;
-    background-color: ${ ({ theme }) => theme.backgroundColor };
+    background-color: ${ ({ theme }) => theme.brand_50 };
+    overflow-y: auto;
     
     .podcast-item {
       display: flex;
       max-width: 550px;
       margin: 0 auto 2rem;
       padding: 1rem;
-      background-color: ${ ({ theme }) => theme.border };
+      background-color: ${ ({ theme }) => theme.background };
   
       img {
         margin-right: 1rem;
@@ -100,6 +98,11 @@ export const StyledRegisterPodcast = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        .add-podcast {
+          color: ${ ({ theme }) => theme.background };
+          background-color: ${ ({ theme }) => theme.brand_50 };
+        }
       }
     }
   }

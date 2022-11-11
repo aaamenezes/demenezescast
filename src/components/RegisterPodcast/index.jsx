@@ -89,7 +89,7 @@ export default function RegisterPodcast() {
           <input type='hidden' name='title' value={podcast.title_original} />
           <input type='hidden' name='url' value={podcast.website} />
           <input type='hidden' name='thumb' value={podcast.thumbnail} />
-          <button type='submit'>Add +</button>
+          <button type='submit' className='add-podcast'>Add +</button>
         </form>
       </div>
     </div>
@@ -105,7 +105,7 @@ export default function RegisterPodcast() {
         +
       </button>
       {modalIsOpen && (
-        <div className='form-wrapper styled-scrollbar'>
+        <div className='form-wrapper'>
           <form onSubmit={searchPodcasts} className='search-form'>
             <button
               type='button'
@@ -123,7 +123,7 @@ export default function RegisterPodcast() {
             />
             <button type='submit' className='submit-button'>Pesquisar</button>
           </form>
-          <div className='results-wrapper'>
+          <div className='results-wrapper styled-scrollbar'>
             {searchResultsElements}
           </div>
         </div>
