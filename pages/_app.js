@@ -7,10 +7,11 @@ import { theme } from '../src/theme'
 import ColorModeProvider, {
   ColorModeContext
 } from '../src/components/ColorMode'
+import RegisterVideo from '../src/components/RegisterVideo'
 
 function ProviderWrapper({ children }) {
   return (
-    <ColorModeProvider>
+    <ColorModeProvider initialMode='light'>
       {children}
     </ColorModeProvider>
   )
@@ -29,6 +30,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <CSSReset />
       <Component {...pageProps} />
+      <RegisterVideo />
     </ThemeProvider>
   )
 }

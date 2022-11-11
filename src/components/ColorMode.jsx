@@ -5,8 +5,8 @@ export const ColorModeContext = createContext({
   setMode: () => {}
 })
 
-export default function ColorModeProvider({ children }) {
-  const [ mode, setMode ] = useState('light') // 'light' | 'dark'
+export default function ColorModeProvider({ children, initialMode }) {
+  const [ mode, setMode ] = useState(initialMode) // 'light' | 'dark'
 
   useEffect(() => {
     const storageMode = localStorage.getItem('storageMode')
