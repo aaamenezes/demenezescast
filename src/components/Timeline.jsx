@@ -62,11 +62,11 @@ const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsIn
 const supabase = createClient(API_URL, API_KEY)
 
 export default function Timeline() {
-  const { podcasts } = React.useContext(ColorModeContext)
+  const { podcasts, setPodcasts } = React.useContext(ColorModeContext)
 
   function updateScreenPodcasts() {
-    const podcast = podcastService()
-    podcast.getAllPodcasts()
+    const service = podcastService()
+    service.getAllPodcasts().then(response => setPodcasts(response.data))
   }
 
   function watchSupabaseChanges() {
@@ -76,6 +76,7 @@ export default function Timeline() {
       .on('DELETE', updateScreenPodcasts)
       .subscribe()
   }
+
   useEffect(() => {
     watchSupabaseChanges()
   }, [])
