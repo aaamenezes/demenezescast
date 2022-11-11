@@ -9,11 +9,11 @@ const StyledSwitch = styled.div`
   width: 50px;
   height: 25px;
   padding: 3px;
-  border: 1px solid ${ ({ theme }) => theme.background };
+  border: 1px solid ${ ({ theme }) => theme.neutral_100 };
   margin-left: auto;
   border-radius: 10000px;
   font-size: 12px;
-  background-color: #333333;
+  background-color: ${ ({ theme }) => theme.neutral_400 };
 
   label {
     width: 50px;
@@ -29,8 +29,8 @@ const StyledSwitch = styled.div`
   
   label::before {
     content: "";
-    background-color: #fafafa;
-    border: 1px solid #333333;
+    background-color: ${ ({ theme }) => theme.neutral_800 };
+    border: 1px solid ${ ({ theme }) => theme.background };
     width: 21px;
     height: 21px;
     border-radius: 100%;

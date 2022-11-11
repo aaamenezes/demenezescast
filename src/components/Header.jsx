@@ -21,7 +21,7 @@ const StyledHeader = styled.header`
     }
 
     p {
-      color: ${ ({ theme }) => theme.border };
+      color: ${ ({ theme }) => theme.neutral_300 };
     }
 
     a {

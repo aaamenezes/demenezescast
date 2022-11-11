@@ -6,7 +6,7 @@ const StyledSearch = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  border: 1px solid ${ ({ theme }) => theme.border };
+  border: 1px solid ${ ({ theme }) => theme.neutral_500 };
   margin: 0 auto;
   border-radius: 4px;
   overflow: hidden;
@@ -22,15 +22,15 @@ const StyledSearch = styled.div`
     border: none;
     outline: none;
     color: ${ ({ theme }) => theme.color };
-    background-color: ${ ({ theme }) => theme.backgroundColor };
+    background-color: ${ ({ theme }) => theme.background };
   }
   button {
     flex: 1;
     cursor: pointer;
     border: none;
-    background-color: ${ ({ theme }) => theme.backgroundLevel2 };
+    background-color: ${ ({ theme }) => theme.brand_100 };
     box-shadow: 0 1px 0 rgb(0 0 0 / 10%);
-    border-left: 1px solid ${ ({ theme }) => theme.borderBase };
+    border-left: 1px solid ${ ({ theme }) => theme.neutral_500 };
     width: 40px;
     height: 40px;
     @media (min-width: 600px) {

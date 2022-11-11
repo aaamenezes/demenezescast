@@ -6,12 +6,11 @@ export const CSSReset = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* transition: background-color .3s, color .3s; */
   }
   body {
     font-family: sans-serif;
     color: ${ ({ theme }) => theme.color };
-    background-color: ${ ({ theme }) => theme.backgroundColor };
+    background-color: ${ ({ theme }) => theme.background };
   }
   /* NextJS */
   html {
@@ -46,12 +45,12 @@ export const CSSReset = createGlobalStyle`
     }
 
     &::-webkit-scrollbar-track {
-      background-color: ${ ({ theme }) => theme.gray };
+      background-color: ${ ({ theme }) => theme.neutral_600 };
       border-radius: 4px;
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: ${ ({ theme }) => theme.border };
+      background-color: ${ ({ theme }) => theme.neutral_300 };
       border-radius: 4px;
     }
   }

@@ -18,8 +18,8 @@ const StyledMenu = styled.header`
   width: 100%;
   min-height: 56px;
   padding: 0.5rem;
-  border: 1px solid ${ ({ theme }) => theme.border };
-  background-color: ${ ({ theme }) => theme.backgroundColor };
+  border: 1px solid ${ ({ theme }) => theme.neutral_500 };
+  background-color: ${ ({ theme }) => theme.background };
 
   @media (min-width: 768px) {
     grid-template-columns: auto 1fr auto;
