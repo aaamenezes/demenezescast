@@ -48,7 +48,7 @@ export default function RegisterPodcast() {
 
     podcastClient.search(searchOptions)
       .then(response => setSearchResult(response.data.results))
-      .catch(error => console.error('ERRU', error))
+      .catch(console.error)
   }
 
   function insertPodcastinDatabase(event) {

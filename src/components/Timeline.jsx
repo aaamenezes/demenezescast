@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { ColorModeContext, PodcastsProvider } from './ColorMode'
 
 const StyledTimeline = styled.div`
   flex: 1;
@@ -54,32 +55,26 @@ const StyledTimeline = styled.div`
 `
 
 export default function Timeline({ playlists, searchValue, mode }) {
+  const { podcasts } = React.useContext(ColorModeContext)
+
   return (
     <StyledTimeline mode={mode}>
-      {Object.keys(playlists).map(item => {
-        const videos = playlists[item]
-        const filteredVideos = videos.filter(video => (
-          video.title.toLowerCase().includes(searchValue.toLowerCase())
-        ))
-
-        if (filteredVideos.length === 0) return null
-
-        return (
-          <section key={videos[0].title} style={{ marginBottom: '3rem' }}>
-            <h2>{item}</h2>
-            <div className='styled-scrollbar' style={{ paddingBottom: '2rem' }}>
-              {filteredVideos.map(video => (
-                <a href={video.url} key={video.url}>
-                  <img src={video.thumb} alt='' />
-                  <span>
-                    {video.title}
-                  </span>
-                </a>
-              ))}
-            </div>
-          </section>
-        )
-      })}
+      <section key='default categorie' style={{ marginBottom: '3rem' }}>
+        <h2>Default Categorie</h2>
+        <div className='styled-scrollbar' style={{ paddingBottom: '2rem' }}>
+          {podcasts.map(podcast => (
+            <a href={podcast.url} key={podcast.url}>
+              <img
+                src={podcast.thumb}
+                alt={`Thumbnail of ${ podcast.title }`}
+              />
+              <span>
+                {podcast.title}
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
     </StyledTimeline>
   )
 }

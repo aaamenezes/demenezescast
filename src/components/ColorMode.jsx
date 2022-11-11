@@ -1,12 +1,16 @@
 import React, { createContext, useEffect, useState } from 'react'
+import { podcastService } from '../services/podcastService'
 
 export const ColorModeContext = createContext({
   mode: 'light', // 'dark
-  setMode: () => {}
+  setMode: () => {},
+  podcasts: [],
+  setPodcasts: () => {}
 })
 
 export default function ColorModeProvider({ children, initialMode }) {
   const [ mode, setMode ] = useState(initialMode) // 'light' | 'dark'
+  const [ podcasts, setPodcasts ] = useState([])
 
   useEffect(() => {
     const storageMode = localStorage.getItem('storageMode')
@@ -18,6 +22,11 @@ export default function ColorModeProvider({ children, initialMode }) {
     }
   }, [])
 
+  useEffect(() => {
+    const service = podcastService()
+    service.getAllPodcasts().then(response => setPodcasts(response.data))
+  }, [])
+
   function handleMode() {
     const newMode = mode === 'light' ? 'dark' : 'light'
     setMode(newMode)
@@ -25,8 +34,10 @@ export default function ColorModeProvider({ children, initialMode }) {
   }
 
   return (
+    <ColorModeContext.Provider
     // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <ColorModeContext.Provider value={{ mode, handleMode }}>
+      value={{ mode, handleMode, podcasts, setPodcasts }}
+    >
       {children}
     </ColorModeContext.Provider>
   )
