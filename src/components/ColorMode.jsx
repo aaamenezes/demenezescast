@@ -24,7 +24,19 @@ export default function ColorModeProvider({ children, initialMode }) {
 
   useEffect(() => {
     const service = podcastService()
-    service.getAllPodcasts().then(response => setPodcasts(response.data))
+    service.getAllPodcasts().then(response => {
+      const uncategorizedPodcasts = response.data
+      const allCategories = [
+        ...new Set(uncategorizedPodcasts.map(obj => obj.category))
+      ]
+      const categorizedPodcasts = allCategories.map(category => ({
+        category,
+        podcasts: uncategorizedPodcasts.filter(
+          podcast => podcast.category === category
+        )
+      }))
+      setPodcasts(categorizedPodcasts)
+    })
   }, [])
 
   function handleMode() {

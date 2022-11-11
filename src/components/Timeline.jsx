@@ -83,22 +83,24 @@ export default function Timeline() {
 
   return (
     <StyledTimeline>
-      <section key='default categorie' style={{ marginBottom: '3rem' }}>
-        <h2>Default Categorie</h2>
-        <div className='styled-scrollbar' style={{ paddingBottom: '2rem' }}>
-          {podcasts.map(podcast => (
-            <a href={podcast.url} key={podcast.url}>
-              <img
-                src={podcast.thumb}
-                alt={`Thumbnail of ${ podcast.title }`}
-              />
-              <span>
-                {podcast.title}
-              </span>
-            </a>
-          ))}
-        </div>
-      </section>
+      {podcasts.map(group => (
+        <section key={group.category} style={{ marginBottom: '3rem' }}>
+          <h2>{group.category}</h2>
+          <div className='styled-scrollbar' style={{ paddingBottom: '2rem' }}>
+            {group.podcasts.map(podcast => (
+              <a href={podcast.url} key={podcast.url}>
+                <img
+                  src={podcast.thumb}
+                  alt={`Thumbnail of ${ podcast.title }`}
+                />
+                <span>
+                  {podcast.title}
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
     </StyledTimeline>
   )
 }
