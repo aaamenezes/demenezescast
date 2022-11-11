@@ -7,7 +7,7 @@ import { theme } from '../src/theme'
 import ColorModeProvider, {
   ColorModeContext
 } from '../src/components/ColorMode'
-import RegisterVideo from '../src/components/RegisterVideo'
+import RegisterPodcast from '../src/components/RegisterPodcast'
 
 function ProviderWrapper({ children }) {
   return (
@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <CSSReset />
       <Component {...pageProps} />
-      <RegisterVideo />
+      <RegisterPodcast />
     </ThemeProvider>
   )
 }

@@ -38,4 +38,21 @@ export const CSSReset = createGlobalStyle`
       opacity: .5;
     }
   }
+
+  .styled-scrollbar {
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: ${ ({ theme }) => theme.gray };
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: ${ ({ theme }) => theme.border };
+      border-radius: 4px;
+    }
+  }
 `

@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Mode from '../DarkMode'
 import Search from './components/Search'
+import config from '../../../config.json'
 
 const StyledMenu = styled.header`
   position: fixed;

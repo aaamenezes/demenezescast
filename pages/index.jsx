@@ -8,6 +8,8 @@ import { ColorModeContext } from '../src/components/ColorMode'
 
 export default function HomePage() {
   const [ searchValue, setSearchValue ] = useState('')
+  const [ podcasts, setPodcasts ] = useState({})
+
   const { setMode } = useContext(ColorModeContext)
 
   return (

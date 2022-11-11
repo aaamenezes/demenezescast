@@ -30,7 +30,7 @@ const StyledTimeline = styled.div`
     overflow: hidden;
     padding: 16px;
 
-    div {      
+    div {
       display: grid;
       grid-gap: 16px;
       grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
@@ -38,21 +38,6 @@ const StyledTimeline = styled.div`
       grid-auto-columns: minmax(200px,1fr);
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-
-      &::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-      }
-
-      &::-webkit-scrollbar-track {
-        background-color: ${ ({ theme }) => theme.gray };
-        border-radius: 4px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background-color: ${ ({ theme }) => theme.border };
-        border-radius: 4px;
-      }
 
       a {
         scroll-snap-align: start;
@@ -82,7 +67,7 @@ export default function Timeline({ playlists, searchValue, mode }) {
         return (
           <section key={videos[0].title} style={{ marginBottom: '3rem' }}>
             <h2>{item}</h2>
-            <div style={{ paddingBottom: '2rem' }}>
+            <div className='styled-scrollbar' style={{ paddingBottom: '2rem' }}>
               {filteredVideos.map(video => (
                 <a href={video.url} key={video.url}>
                   <img src={video.thumb} alt='' />
