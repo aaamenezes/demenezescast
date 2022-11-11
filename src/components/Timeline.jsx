@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import { ColorModeContext, PodcastsProvider } from './ColorMode'
+import { createClient } from '@supabase/supabase-js'
+import { ColorModeContext } from './ColorMode'
+import { podcastService } from '../services/podcastService'
 
 const StyledTimeline = styled.div`
   flex: 1;
@@ -54,11 +56,32 @@ const StyledTimeline = styled.div`
   }
 `
 
-export default function Timeline({ playlists, searchValue, mode }) {
+const API_URL = 'https://bxfwuyweuulatsylxysg.supabase.co'
+// eslint-disable-next-line max-len
+const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4Znd1eXdldXVsYXRzeWx4eXNnIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjgxNjcxOTYsImV4cCI6MTk4Mzc0MzE5Nn0.tJqjs9FvT80--Abwe4qeowVPgpojMjymMKox_h9-_nw'
+const supabase = createClient(API_URL, API_KEY)
+
+export default function Timeline() {
   const { podcasts } = React.useContext(ColorModeContext)
 
+  function updateScreenPodcasts() {
+    const podcast = podcastService()
+    podcast.getAllPodcasts()
+  }
+
+  function watchSupabaseChanges() {
+    supabase
+      .from('podcasts')
+      .on('INSERT', updateScreenPodcasts)
+      .on('DELETE', updateScreenPodcasts)
+      .subscribe()
+  }
+  useEffect(() => {
+    watchSupabaseChanges()
+  }, [])
+
   return (
-    <StyledTimeline mode={mode}>
+    <StyledTimeline>
       <section key='default categorie' style={{ marginBottom: '3rem' }}>
         <h2>Default Categorie</h2>
         <div className='styled-scrollbar' style={{ paddingBottom: '2rem' }}>

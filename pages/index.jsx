@@ -8,7 +8,6 @@ import { ColorModeContext } from '../src/components/ColorMode'
 
 export default function HomePage() {
   const [ searchValue, setSearchValue ] = useState('')
-  const [ podcasts, setPodcasts ] = useState({})
 
   const { setMode } = useContext(ColorModeContext)
 
@@ -27,7 +26,7 @@ export default function HomePage() {
       />
       <Banner />
       <Header />
-      <Timeline playlists={config.playlists} searchValue={searchValue} />
+      <Timeline />
     </div>
   )
 }
