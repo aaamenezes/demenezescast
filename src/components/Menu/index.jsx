@@ -7,23 +7,25 @@ import Search from './components/Search'
 const StyledMenu = styled.header`
   position: fixed;
   z-index: 1;
-  display: flex;
-  gap: 16px;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 56px;
-  padding: 0 16px;
+  min-height: 56px;
+  padding: 0.5rem;
   border: 1px solid ${ ({ theme }) => theme.border };
   background-color: ${ ({ theme }) => theme.backgroundColor };
 
+  @media (min-width: 768px) {
+    grid-template-columns: auto 1fr auto;
+  }
+
   .logo {
     width: 100%;  
-    max-width: 80px;
-    @media (min-width: 600px) {
-      max-width: 127px;
-    }
+    max-width: 127px;
+
     .text {
       fill: ${ ({ theme }) => theme.color };
     }

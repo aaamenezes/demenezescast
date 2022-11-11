@@ -26,6 +26,7 @@ export const CSSReset = createGlobalStyle`
   #__next {
     display: flex;
     flex: 1;
+    max-width: 100%;
   }
   /* Globals */
   button,

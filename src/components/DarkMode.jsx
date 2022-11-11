@@ -3,17 +3,17 @@ import styled from 'styled-components'
 import { ColorModeContext } from './ColorMode'
 
 const StyledSwitch = styled.div`
-  background-color: #333333;
-  border: 0;
-  padding: 3px;
-  font-size: 12px;
-  width: 50px;
-  height: 25px;
+  position: relative;
   display: flex;
   justify-content: space-around;
-  border-radius: 10000px;
-  position: relative;
+  width: 50px;
+  height: 25px;
+  padding: 3px;
   border: 1px solid ${ ({ theme }) => theme.background };
+  margin-left: auto;
+  border-radius: 10000px;
+  font-size: 12px;
+  background-color: #333333;
 
   label {
     width: 50px;

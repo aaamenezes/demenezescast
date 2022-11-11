@@ -2,13 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledSearch = styled.div`
+  grid-area: 2 / 1 / 3 / 3;
   display: flex;
   flex-direction: row;
-  border: 1px solid ${ ({ theme }) => theme.border };
-  max-width: 425px;
   width: 100%;
+  border: 1px solid ${ ({ theme }) => theme.border };
+  margin: 0 auto;
   border-radius: 4px;
   overflow: hidden;
+
+  @media (min-width: 768px) {
+    grid-area: initial;
+    max-width: 425px;
+  }
   
   input {
     width: 80%;
