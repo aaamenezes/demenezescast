@@ -5,8 +5,6 @@ import Mode from '../DarkMode'
 import Search from './components/Search'
 import config from '../../../config.json'
 
-console.log('config', config)
-
 const StyledMenu = styled.header`
   position: fixed;
   z-index: 1;
