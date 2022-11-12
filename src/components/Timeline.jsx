@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { createClient } from '@supabase/supabase-js'
 import { ColorModeContext } from './ColorMode'
 import { podcastService } from '../services/podcastService'
+import { categorizePodcasts } from '../services/categorizePodcasts'
 
 const StyledTimeline = styled.div`
   flex: 1;
@@ -66,7 +67,11 @@ export default function Timeline() {
 
   function updateScreenPodcasts() {
     const service = podcastService()
-    service.getAllPodcasts().then(response => setPodcasts(response.data))
+    service.getAllPodcasts().then(response => {
+      const uncategorizedPodcasts = response.data
+      const categorizedPodcasts = categorizePodcasts(uncategorizedPodcasts)
+      setPodcasts(categorizedPodcasts)
+    })
   }
 
   function watchSupabaseChanges() {
@@ -84,11 +89,11 @@ export default function Timeline() {
   return (
     <StyledTimeline>
       {podcasts.map(group => (
-        <section key={group.category} style={{ marginBottom: '3rem' }}>
+        <section key={group.id} style={{ marginBottom: '3rem' }}>
           <h2>{group.category}</h2>
           <div className='styled-scrollbar' style={{ paddingBottom: '2rem' }}>
             {group.podcasts.map(podcast => (
-              <a href={podcast.url} key={podcast.url}>
+              <a href={podcast.url} key={podcast.id}>
                 <img
                   src={podcast.thumb}
                   alt={`Thumbnail of ${ podcast.title }`}
