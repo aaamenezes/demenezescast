@@ -1,9 +1,21 @@
-![deMenezesCast Stats](https://github-readme-stats.vercel.app/api?username=aaamenezes&theme=great-gatsby&show_icons=true)
-![deMenezesCast Stats](https://github-readme-stats.vercel.app/api/pin/?username=aaamenezes&repo=demenezescast&theme=great-gatsby)
+# deMenezesCast 🎙️
+
+Esse projeto foi desenvolvido durante a [5ª Imersão React da Alura](https://www.alura.com.br/imersao-react).
+
+| :placard: Vitrine.Dev |                                                                   |
+| --------------------- | ----------------------------------------------------------------- |
+| :sparkles: Nome       | **deMenezesCast**                                                 |
+| :label: Tecnologias   | ReactJS, NextJS, Styled Components, Supabase, ESLint, podcast-api |
+| :rocket: URL          | https://demenezescast.vercel.app/                                 |
+| :fire: Desafio        | https://www.alura.com.br/imersao-react                            |
+
+![](https://user-images.githubusercontent.com/57503927/201452893-d9943be5-3f48-4dc5-b181-a891e0054645.png#vitrinedev)
+
+---
+
+![deMenezesCast Stats](https://github-readme-stats.vercel.app/api?username=aaamenezes&theme=great-gatsby&show_icons=true) ![deMenezesCast Stats](https://github-readme-stats.vercel.app/api/pin/?username=aaamenezes&repo=demenezescast&theme=great-gatsby)
 
 ![](https://img.shields.io/github/license/aaamenezes/demenezescast?style=for-the-badge) ![](https://img.shields.io/github/last-commit/aaamenezes/demenezescast?style=for-the-badge) ![](https://img.shields.io/librariesio/github/aaamenezes/demenezes-tube?style=for-the-badge)
-
-# deMenezesCast 🎙️
 
 Antes de qualquer coisa: você gosta de podcast? Eu também!
 
@@ -11,21 +23,15 @@ Então acessa o projeto, e cadastra um podcast de sugestão para mim ;)
 
 Obs.: os meus preferidos já estão lá, vc pode ver...
 
-<div align="center">
-  <a href="https://demenezescast.vercel.app/" target="_blank">
-    <b>deMenezesCast >>></b>
-  </a>
-</div>
+## Detalhes do projeto
 
----
+<div align="center"><img src="public/images/logo_icon.png" /></div>
 
 ![csdcsd](public/images/banner.jpg)
 
 <div align="center"><img src="public/images/logo_icon.png" /></div>
 
-Esse projeto foi desenvolvido durante a [5ª Imersão React da Alura](https://www.alura.com.br/imersao-react).
-
-## Tecnologias e linguagens
+## Tecnologias e linguagens ⚒️
 
 ![ReactJS](https://img.shields.io/badge/%20-React-61DAFB?style=for-the-badge&logo=react&logoColor=black) ![NextJS](https://img.shields.io/badge/%20-NextJS-000000?style=for-the-badge&logo=vercel&logoColor=white) ![Styled Components](https://img.shields.io/badge/%20-StyledComponents-DB7093?style=for-the-badge&logo=styled-components&logoColor=white) ![Supabase](https://img.shields.io/badge/%20-Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white) ![ESLint](https://img.shields.io/badge/%20-ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
 
@@ -53,12 +59,11 @@ Além disso, usei outras duas bibliotecas para complementar meu projeto:
 - Salvar sugestões de podcast em um banco de dados no Supabase
 - Atualização automática da tela assim que um podcast é salvo
 
-### Implementar no futuro ⚒️
+### Implementar no futuro ⏱️
 
 - Remover um podcast pela interface
 - Escolher a categoria ao adicionar um podcast
 - ...
-
 
 ## Screenshots 🖥️
 
