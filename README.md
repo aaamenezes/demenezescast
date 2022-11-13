@@ -56,8 +56,9 @@ Além disso, usei outras duas bibliotecas para complementar meu projeto:
 - Listagem de podcasts separados por categoria
 - Filtro de podcasts
 - Consulta de podcasts em uma ampla base de dados
-- Salvar sugestões de podcast em um banco de dados no Supabase
+- Salvar sugestões de podcast em um banco de dados no Supabase incluindo sua categoria
 - Atualização automática da tela assim que um podcast é salvo
+- Poder remover podcast da base de dados pela interface
 
 ### Implementar no futuro ⏱️
 
