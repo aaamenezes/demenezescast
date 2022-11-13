@@ -65,8 +65,8 @@ export default function DarkModeSwitch() {
         htmlFor='darkmode'
         className='darkmode-switch'
       >
-        <span>🌙</span>
-        <span>☀️</span>
+        <span><i className='fa-regular fa-moon' /></span>
+        <span><i className='fa-regular fa-sun' /></span>
       </label>
     </StyledSwitch>
   )
