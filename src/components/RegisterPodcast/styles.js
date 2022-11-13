@@ -80,10 +80,15 @@ export const StyledRegisterPodcast = styled.div`
     
     .podcast-item {
       display: flex;
+      flex-direction: column;
       max-width: 550px;
       margin: 0 auto 2rem;
       padding: 1rem;
       background-color: ${ ({ theme }) => theme.background };
+      
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
   
       img {
         margin-right: 1rem;
@@ -92,6 +97,11 @@ export const StyledRegisterPodcast = styled.div`
       
       a {
         color: currentColor;
+        margin: 1rem 0 2rem;
+        
+        @media (min-width: 768px) {
+          margin: 0 0 0.5rem;
+        } 
       }
 
       .infos {

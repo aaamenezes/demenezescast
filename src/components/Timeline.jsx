@@ -45,6 +45,7 @@ const StyledTimeline = styled.div`
 
       .podcast-item {
         position: relative;
+        scroll-snap-align: center;
 
         &:hover {
           .remove-podcast {
@@ -65,17 +66,19 @@ const StyledTimeline = styled.div`
           border-radius: 50%;
           font-size: 2rem;
           background-color: ${ ({ theme }) => theme.brand_50 };
-          opacity: 0;
           cursor: pointer;
-
+          
           &:hover {
             background-color: ${ ({ theme }) => theme.brand_200 };
           }
+          
+          @media (min-width: 768px) {
+            opacity: 0;
+          } 
         }
       }
 
       a {
-        scroll-snap-align: start;
         color: currentColor;
 
         span {
