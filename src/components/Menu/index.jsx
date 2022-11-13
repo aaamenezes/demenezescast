@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 import React from 'react'
 import styled from 'styled-components'
-import Mode from '../DarkMode'
 import Search from './components/Search'
 import config from '../../../config.json'
+import DarkMode from '../DarkMode'
 
 const StyledMenu = styled.header`
   position: fixed;
@@ -33,18 +33,17 @@ const StyledMenu = styled.header`
   }
 `
 
-export default function Menu({ searchValue, setSearchValue, mode, setMode }) {
+export default function Menu({ searchValue, setSearchValue }) {
   return (
-    <StyledMenu mode={mode}>
+    <StyledMenu>
       <div>
         <Logo />
       </div>
       <Search
         searchValue={searchValue}
         setSearchValue={setSearchValue}
-        mode={mode}
       />
-      <Mode mode={mode} setMode={setMode} />
+      <DarkMode />
     </StyledMenu>
   )
 }

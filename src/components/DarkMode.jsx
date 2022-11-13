@@ -51,7 +51,7 @@ const StyledSwitch = styled.div`
   }
 `
 
-export default function DarkModeSwitch() {
+export default function DarkMode() {
   const { handleMode } = React.useContext(ColorModeContext)
 
   return (

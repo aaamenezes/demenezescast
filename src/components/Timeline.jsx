@@ -90,7 +90,7 @@ const StyledTimeline = styled.div`
   }
 `
 
-export default function Timeline() {
+export default function Timeline({ searchValue }) {
   const { podcasts, setPodcasts } = useContext(ColorModeContext)
   const service = podcastService()
 
@@ -114,43 +114,61 @@ export default function Timeline() {
   //   service.remove(id).then(updateScreenPodcasts)
   // }
 
+  function matchSearch(content, keywordSearch) {
+    const contentNormalized = content.toLowerCase().trim()
+    const keywordSearchNormalized = keywordSearch.toLowerCase().trim()
+    return contentNormalized.includes(keywordSearchNormalized)
+  }
+
   return (
     <StyledTimeline>
-      {podcasts.map(group => (
-        <section
-          key={`${ group.id }-${ Math.random() }`}
-          style={{ marginBottom: '3rem' }}
-        >
-          <h2>{group.category}</h2>
-          <div className='styled-scrollbar' style={{ paddingBottom: '2rem' }}>
-            {group.podcasts.map(podcast => (
-              <div className='podcast-item'>
-                {/* <button
-                  type='button'
-                  className='remove-podcast'
-                  onClick={() => removePodcast(podcast.id)}
-                >
-                  &times;
-                </button> */}
-                <a
-                  href={podcast.url}
-                  key={podcast.id}
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  <img
-                    src={podcast.thumb}
-                    alt={`Thumbnail of ${ podcast.title }`}
-                  />
-                  <span>
-                    {podcast.title}
-                  </span>
-                </a>
-              </div>
-            ))}
-          </div>
-        </section>
-      ))}
+      {podcasts.map(group => {
+        const list = group.podcasts.filter(
+          podcast => matchSearch(podcast.title, searchValue)
+        )
+
+        if (list.length === 0) return null
+
+        return (
+          <section
+            key={`${ group.id }-${ Math.random() }`}
+            style={{ marginBottom: '3rem' }}
+          >
+            <h2>{group.category}</h2>
+            <div className='styled-scrollbar' style={{ paddingBottom: '2rem' }}>
+              {group.podcasts.map(podcast => {
+                if (!matchSearch(podcast.title, searchValue)) return null
+
+                return (
+                  <div className='podcast-item'>
+                    {/* <button
+                      type='button'
+                      className='remove-podcast'
+                      onClick={() => removePodcast(podcast.id)}
+                    >
+                      &times;
+                    </button> */}
+                    <a
+                      href={podcast.url}
+                      key={podcast.id}
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      <img
+                        src={podcast.thumb}
+                        alt={`Thumbnail of ${ podcast.title }`}
+                      />
+                      <span>
+                        {podcast.title}
+                      </span>
+                    </a>
+                  </div>
+                )
+              })}
+            </div>
+          </section>
+        )
+      })}
     </StyledTimeline>
   )
 }

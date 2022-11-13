@@ -40,14 +40,9 @@ const StyledSearch = styled.div`
   }
 `
 
-// Home
-// Menu
-// Search
-// Informação sempre desce
-
-export default function Search({ searchValue, setSearchValue, mode }) {
+export default function Search({ searchValue, setSearchValue }) {
   return (
-    <StyledSearch mode={mode}>
+    <StyledSearch>
       <input
         type='text'
         onChange={event => setSearchValue(event.target.value)}

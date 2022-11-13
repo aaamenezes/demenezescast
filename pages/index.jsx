@@ -1,14 +1,11 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import Header from '../src/components/Header'
 import Menu from '../src/components/Menu'
 import Timeline from '../src/components/Timeline'
 import Banner from '../src/components/Banner'
-import { ColorModeContext } from '../src/components/ColorMode'
 
 export default function HomePage() {
   const [ searchValue, setSearchValue ] = useState('')
-
-  const { setMode } = useContext(ColorModeContext)
 
   return (
     <div style={{
@@ -21,11 +18,10 @@ export default function HomePage() {
       <Menu
         searchValue={searchValue}
         setSearchValue={setSearchValue}
-        setMode={setMode}
       />
       <Banner />
       <Header />
-      <Timeline />
+      <Timeline searchValue={searchValue} />
     </div>
   )
 }
