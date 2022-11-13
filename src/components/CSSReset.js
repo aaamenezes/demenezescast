@@ -11,7 +11,7 @@ export const CSSReset = createGlobalStyle`
   body {
     font-family: sans-serif;
     color: ${ ({ theme }) => theme.color };
-    background-color: ${ ({ theme }) => theme.background };
+    background-color: ${ ({ theme }) => theme.neutral_800 };
   }
   /* NextJS */
   html {

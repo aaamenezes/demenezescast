@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import config from '../../config.json'
 
 const StyledHeader = styled.header`
+  background-color: ${ ({ theme }) => theme.background };
+
   img {
     width: 80px;
     height: 80px;

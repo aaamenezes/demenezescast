@@ -31,7 +31,7 @@ const StyledTimeline = styled.div`
     width: 100%;
     padding: 0;
     overflow: hidden;
-    padding: 16px;
+    padding: 1rem;
 
     div {
       display: grid;

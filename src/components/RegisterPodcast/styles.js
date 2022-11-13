@@ -21,7 +21,7 @@ export const StyledRegisterPodcast = styled.div`
     position: absolute;
     top: 8px;
     right: 16px;
-    color: inherit;
+    color: ${ ({ theme }) => theme.background };
     background-color: transparent;
     border: none;
     cursor: pointer;
