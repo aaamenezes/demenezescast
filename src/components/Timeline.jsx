@@ -43,6 +43,37 @@ const StyledTimeline = styled.div`
       overflow-x: auto;
       scroll-snap-type: x mandatory;
 
+      .podcast-item {
+        position: relative;
+
+        &:hover {
+          .remove-podcast {
+            opacity: 1;
+          }
+        }
+
+        .remove-podcast {
+          position: absolute;
+          top: 0.5rem;
+          right: 0.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 2rem;
+          height: 2rem;
+          border: none;
+          border-radius: 50%;
+          font-size: 2rem;
+          background-color: ${ ({ theme }) => theme.brand_50 };
+          opacity: 0;
+          cursor: pointer;
+
+          &:hover {
+            background-color: ${ ({ theme }) => theme.brand_200 };
+          }
+        }
+      }
+
       a {
         scroll-snap-align: start;
         color: currentColor;
@@ -86,6 +117,14 @@ export default function Timeline() {
     watchSupabaseChanges()
   }, [])
 
+  function removePodcast(id) {
+    supabase
+      .from('podcasts')
+      .delete()
+      .match({ id })
+      .then(updateScreenPodcasts)
+  }
+
   return (
     <StyledTimeline>
       {podcasts.map(group => (
@@ -96,15 +135,24 @@ export default function Timeline() {
           <h2>{group.category}</h2>
           <div className='styled-scrollbar' style={{ paddingBottom: '2rem' }}>
             {group.podcasts.map(podcast => (
-              <a href={podcast.url} key={podcast.id}>
-                <img
-                  src={podcast.thumb}
-                  alt={`Thumbnail of ${ podcast.title }`}
-                />
-                <span>
-                  {podcast.title}
-                </span>
-              </a>
+              <div className='podcast-item'>
+                <button
+                  type='button'
+                  className='remove-podcast'
+                  onClick={() => removePodcast(podcast.id)}
+                >
+                  &times;
+                </button>
+                <a href={podcast.url} key={podcast.id}>
+                  <img
+                    src={podcast.thumb}
+                    alt={`Thumbnail of ${ podcast.title }`}
+                  />
+                  <span>
+                    {podcast.title}
+                  </span>
+                </a>
+              </div>
             ))}
           </div>
         </section>

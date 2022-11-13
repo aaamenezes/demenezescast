@@ -32,11 +32,6 @@ export const CSSReset = createGlobalStyle`
   button,
   a {
     text-decoration: none;
-    opacity: 1;
-    &:hover,
-    &:focus {
-      opacity: .5;
-    }
   }
 
   .styled-scrollbar {
