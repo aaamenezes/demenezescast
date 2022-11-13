@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styled from 'styled-components'
 import { createClient } from '@supabase/supabase-js'
 import { ColorModeContext } from './ColorMode'
@@ -63,7 +63,7 @@ const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsIn
 const supabase = createClient(API_URL, API_KEY)
 
 export default function Timeline() {
-  const { podcasts, setPodcasts } = React.useContext(ColorModeContext)
+  const { podcasts, setPodcasts } = useContext(ColorModeContext)
 
   function updateScreenPodcasts() {
     const service = podcastService()

@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Client } from 'podcast-api'
 import { createClient } from '@supabase/supabase-js'
 import { StyledRegisterPodcast } from './styles'
+import { ColorModeContext } from '../ColorMode'
 
 function useForm({ initialValues }) {
   const [ values, setValues ] = useState(initialValues)
@@ -24,15 +25,26 @@ function useForm({ initialValues }) {
 
 function CategoryToAdd() {
   const [ categoryToAdd, setCategoryToAdd ] = useState(null)
+  const { podcasts } = useContext(ColorModeContext)
 
   return (
-    <input
-      type='text'
-      name='category'
-      placeholder='category'
-      value={categoryToAdd}
-      onChange={event => setCategoryToAdd(event.target.value)}
-    />
+    <>
+      <input
+        type='text'
+        name='category'
+        placeholder='Categoria/Assunto'
+        value={categoryToAdd}
+        onChange={event => setCategoryToAdd(event.target.value)}
+        list='categories-list'
+        label='categories-list'
+        required
+      />
+      <datalist id='categories-list'>
+        {podcasts.map(podcast => (
+          <option value={podcast.category} label={podcast.category} />
+        ))}
+      </datalist>
+    </>
   )
 }
 
