@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react'
-import { categorizePodcasts } from '../services/categorizePodcasts'
+import { categorizePodcasts } from '../utils/categorizePodcasts'
 import { podcastService } from '../services/podcastService'
 
 export const ColorModeContext = createContext({
@@ -24,8 +24,7 @@ export default function ColorModeProvider({ children, initialMode }) {
   }, [])
 
   useEffect(() => {
-    const service = podcastService()
-    service.getAllPodcasts().then(response => {
+    podcastService().getAll().then(response => {
       const uncategorizedPodcasts = response.data
       const categorizedPodcasts = categorizePodcasts(uncategorizedPodcasts)
       setPodcasts(categorizedPodcasts)

@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { Client } from 'podcast-api'
-import { createClient } from '@supabase/supabase-js'
 import { StyledRegisterPodcast } from './styles'
 import { ColorModeContext } from '../ColorMode'
+import { podcastService } from '../../services/podcastService'
 
 function useForm({ initialValues }) {
   const [ values, setValues ] = useState(initialValues)
@@ -88,15 +88,7 @@ export default function RegisterPodcast() {
       category: formData.get('category')
     }
 
-    const API_URL = 'https://bxfwuyweuulatsylxysg.supabase.co'
-    // eslint-disable-next-line max-len
-    const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4Znd1eXdldXVsYXRzeWx4eXNnIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjgxNjcxOTYsImV4cCI6MTk4Mzc0MzE5Nn0.tJqjs9FvT80--Abwe4qeowVPgpojMjymMKox_h9-_nw'
-    const supabase = createClient(API_URL, API_KEY)
-
-    supabase
-      .from('podcasts')
-      .insert(podcastToInsert)
-      .then(() => setModalIsOpen(false))
+    podcastService().insert(podcastToInsert)
   }
 
   const searchResultsElements = searchResults.map(podcast => (

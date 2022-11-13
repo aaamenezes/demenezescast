@@ -6,9 +6,34 @@ const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsIn
 const supabase = createClient(API_URL, API_KEY)
 
 export function podcastService() {
-  return {
-    getAllPodcasts() {
-      return supabase.from('podcasts').select('*')
-    }
+  const databaseTable = 'podcasts'
+
+  function insert(podcastToInsert) {
+    return supabase
+      .from(databaseTable)
+      .insert(podcastToInsert)
   }
+
+  function getAll() {
+    return supabase
+      .from(databaseTable)
+      .select('*')
+  }
+
+  function remove(id) {
+    return supabase
+      .from(databaseTable)
+      .delete()
+      .match({ id })
+  }
+
+  function observer(callback) {
+    return supabase
+      .from(databaseTable)
+      .on('INSERT', callback)
+      .on('DELETE', callback)
+      .subscribe()
+  }
+
+  return { insert, getAll, remove, observer }
 }

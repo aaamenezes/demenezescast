@@ -1,9 +1,8 @@
 import React, { useContext, useEffect } from 'react'
 import styled from 'styled-components'
-import { createClient } from '@supabase/supabase-js'
 import { ColorModeContext } from './ColorMode'
 import { podcastService } from '../services/podcastService'
-import { categorizePodcasts } from '../services/categorizePodcasts'
+import { categorizePodcasts } from '../utils/categorizePodcasts'
 
 const StyledTimeline = styled.div`
   flex: 1;
@@ -91,17 +90,12 @@ const StyledTimeline = styled.div`
   }
 `
 
-const API_URL = 'https://bxfwuyweuulatsylxysg.supabase.co'
-// eslint-disable-next-line max-len
-const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4Znd1eXdldXVsYXRzeWx4eXNnIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjgxNjcxOTYsImV4cCI6MTk4Mzc0MzE5Nn0.tJqjs9FvT80--Abwe4qeowVPgpojMjymMKox_h9-_nw'
-const supabase = createClient(API_URL, API_KEY)
-
 export default function Timeline() {
   const { podcasts, setPodcasts } = useContext(ColorModeContext)
+  const service = podcastService()
 
   function updateScreenPodcasts() {
-    const service = podcastService()
-    service.getAllPodcasts().then(response => {
+    service.getAll().then(response => {
       const uncategorizedPodcasts = response.data
       const categorizedPodcasts = categorizePodcasts(uncategorizedPodcasts)
       setPodcasts(categorizedPodcasts)
@@ -109,11 +103,7 @@ export default function Timeline() {
   }
 
   function watchSupabaseChanges() {
-    supabase
-      .from('podcasts')
-      .on('INSERT', updateScreenPodcasts)
-      .on('DELETE', updateScreenPodcasts)
-      .subscribe()
+    service.observer(updateScreenPodcasts)
   }
 
   useEffect(() => {
@@ -121,11 +111,7 @@ export default function Timeline() {
   }, [])
 
   // function removePodcast(id) {
-  //   supabase
-  //     .from('podcasts')
-  //     .delete()
-  //     .match({ id })
-  //     .then(updateScreenPodcasts)
+  //   service.remove(id).then(updateScreenPodcasts)
   // }
 
   return (
@@ -146,7 +132,12 @@ export default function Timeline() {
                 >
                   &times;
                 </button> */}
-                <a href={podcast.url} key={podcast.id}>
+                <a
+                  href={podcast.url}
+                  key={podcast.id}
+                  target='_blank'
+                  rel='noreferrer'
+                >
                   <img
                     src={podcast.thumb}
                     alt={`Thumbnail of ${ podcast.title }`}
