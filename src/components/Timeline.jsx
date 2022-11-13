@@ -120,13 +120,13 @@ export default function Timeline() {
     watchSupabaseChanges()
   }, [])
 
-  function removePodcast(id) {
-    supabase
-      .from('podcasts')
-      .delete()
-      .match({ id })
-      .then(updateScreenPodcasts)
-  }
+  // function removePodcast(id) {
+  //   supabase
+  //     .from('podcasts')
+  //     .delete()
+  //     .match({ id })
+  //     .then(updateScreenPodcasts)
+  // }
 
   return (
     <StyledTimeline>
@@ -139,13 +139,13 @@ export default function Timeline() {
           <div className='styled-scrollbar' style={{ paddingBottom: '2rem' }}>
             {group.podcasts.map(podcast => (
               <div className='podcast-item'>
-                <button
+                {/* <button
                   type='button'
                   className='remove-podcast'
                   onClick={() => removePodcast(podcast.id)}
                 >
                   &times;
-                </button>
+                </button> */}
                 <a href={podcast.url} key={podcast.id}>
                   <img
                     src={podcast.thumb}
