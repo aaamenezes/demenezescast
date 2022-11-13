@@ -22,6 +22,20 @@ function useForm({ initialValues }) {
   }
 }
 
+function CategoryToAdd() {
+  const [ categoryToAdd, setCategoryToAdd ] = useState(null)
+
+  return (
+    <input
+      type='text'
+      name='category'
+      placeholder='category'
+      value={categoryToAdd}
+      onChange={event => setCategoryToAdd(event.target.value)}
+    />
+  )
+}
+
 export default function RegisterPodcast() {
   const [ searchResults, setSearchResult ] = useState([])
   const [ modalIsOpen, setModalIsOpen ] = useState(false)
@@ -46,32 +60,35 @@ export default function RegisterPodcast() {
       language: 'Portuguese' // Portuguese | English
     }
 
-    podcastClient.search(searchOptions)
+    podcastClient
+      .search(searchOptions)
       .then(response => setSearchResult(response.data.results))
-      .catch(console.error)
   }
 
   function insertPodcastinDatabase(event) {
     event.preventDefault()
-    const formData = {}
-    Array.from(event.target.querySelectorAll('*')).forEach(input => {
-      if (input.tagName === 'INPUT') formData[input.name] = input.value
-    })
+    const formData = new FormData(event.target)
 
-    formData.category = 'default category'
+    const podcastToInsert = {
+      title: formData.get('title'),
+      url: formData.get('url'),
+      thumb: formData.get('thumb'),
+      category: formData.get('category')
+    }
 
     const API_URL = 'https://bxfwuyweuulatsylxysg.supabase.co'
     // eslint-disable-next-line max-len
     const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4Znd1eXdldXVsYXRzeWx4eXNnIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjgxNjcxOTYsImV4cCI6MTk4Mzc0MzE5Nn0.tJqjs9FvT80--Abwe4qeowVPgpojMjymMKox_h9-_nw'
     const supabase = createClient(API_URL, API_KEY)
 
-    supabase.from('podcasts').insert(formData)
-      .then(console.log)
-      .catch(console.error)
+    supabase
+      .from('podcasts')
+      .insert(podcastToInsert)
+      .then(() => setModalIsOpen(false))
   }
 
   const searchResultsElements = searchResults.map(podcast => (
-    <div className='podcast-item'>
+    <div className='podcast-item' key={podcast.id}>
       <img
         src={podcast.thumbnail}
         alt={`Thumbnail of ${ podcast.title }`}
@@ -89,6 +106,7 @@ export default function RegisterPodcast() {
           <input type='hidden' name='title' value={podcast.title_original} />
           <input type='hidden' name='url' value={podcast.website} />
           <input type='hidden' name='thumb' value={podcast.thumbnail} />
+          <CategoryToAdd />
           <button type='submit' className='add-podcast'>Add +</button>
         </form>
       </div>

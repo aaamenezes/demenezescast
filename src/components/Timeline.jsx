@@ -89,7 +89,10 @@ export default function Timeline() {
   return (
     <StyledTimeline>
       {podcasts.map(group => (
-        <section key={group.id} style={{ marginBottom: '3rem' }}>
+        <section
+          key={`${ group.id }-${ Math.random() }`}
+          style={{ marginBottom: '3rem' }}
+        >
           <h2>{group.category}</h2>
           <div className='styled-scrollbar' style={{ paddingBottom: '2rem' }}>
             {group.podcasts.map(podcast => (
