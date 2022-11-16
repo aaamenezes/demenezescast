@@ -140,7 +140,10 @@ export default function Timeline({ searchValue }) {
                 if (!matchSearch(podcast.title, searchValue)) return null
 
                 return (
-                  <div className='podcast-item'>
+                  <div
+                    className='podcast-item'
+                    key={`${ group.id }-${ Math.random() }`}
+                  >
                     {/* <button
                       type='button'
                       className='remove-podcast'

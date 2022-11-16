@@ -24,7 +24,7 @@ function useForm({ initialValues }) {
 }
 
 function CategoryToAdd() {
-  const [ categoryToAdd, setCategoryToAdd ] = useState(null)
+  const [ categoryToAdd, setCategoryToAdd ] = useState('')
   const { podcasts } = useContext(ColorModeContext)
 
   return (
@@ -41,7 +41,11 @@ function CategoryToAdd() {
       />
       <datalist id='categories-list'>
         {podcasts.map(podcast => (
-          <option value={podcast.category} label={podcast.category} />
+          <option
+            value={podcast.category}
+            label={podcast.category}
+            key={`${ podcast.id }-${ Math.random() }`}
+          />
         ))}
       </datalist>
     </>
@@ -79,6 +83,7 @@ export default function RegisterPodcast() {
 
   function insertPodcastinDatabase(event) {
     event.preventDefault()
+
     const formData = new FormData(event.target)
 
     const podcastToInsert = {
@@ -88,11 +93,13 @@ export default function RegisterPodcast() {
       category: formData.get('category')
     }
 
-    podcastService().insert(podcastToInsert)
+    podcastService()
+      .insert(podcastToInsert)
+      .then(() => setModalIsOpen(false))
   }
 
   const searchResultsElements = searchResults.map(podcast => (
-    <div className='podcast-item' key={podcast.id}>
+    <div className='podcast-item' key={`${ podcast.id }-${ Math.random() }`}>
       <img
         src={podcast.thumbnail}
         alt={`Thumbnail of ${ podcast.title }`}
@@ -107,9 +114,21 @@ export default function RegisterPodcast() {
           <h3>{podcast.title_original}</h3>
         </a>
         <form onSubmit={insertPodcastinDatabase}>
-          <input type='hidden' name='title' value={podcast.title_original} />
-          <input type='hidden' name='url' value={podcast.website} />
-          <input type='hidden' name='thumb' value={podcast.thumbnail} />
+          <input
+            type='hidden'
+            name='title'
+            value={podcast.title_original || ''}
+          />
+          <input
+            type='hidden'
+            name='url'
+            value={podcast.website || ''}
+          />
+          <input
+            type='hidden'
+            name='thumb'
+            value={podcast.thumbnail || ''}
+          />
           <CategoryToAdd />
           <button type='submit' className='add-podcast'>Add +</button>
         </form>
